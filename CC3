@@ -1,0 +1,63 @@
+Add-Account.apxc
+
+public class Demo1 {
+    public void CreateAccount(String Name, String Phone) {
+        account acc = new account();
+        acc.Name = Name;
+        acc.Phone = Phone;
+        insert acc;
+        System.debug('Inserted account: '+ acc.Name);
+    }
+}
+
+---------------------------------------------------------------------------------------
+
+Type the Following in Debug Anonymous Window
+
+Demo1 acc = new Demo1();
+acc.CreateAccount('Devesh', '123456');
+
+---------------------------------------------------------------------------------------
+
+Update-Account.apxc
+
+public class Demo2 {
+    public void UpdateOlderAccount(String Name) {
+        List<Account> oldAccounts = new List<Account>();
+        for(Account acc: [SELECT Name FROM Account WHERE Phone='123456']) {
+            acc.Name = Name;
+            oldAccounts.add(acc);
+        }
+        update oldAccounts;
+    }
+}
+
+--------------------------------------------------------------------------------------
+
+Type the following in Debug Anonymous Window
+
+Demo2 acc = new Demo2();
+acc.UpdateOlderAccount('Singh');
+
+--------------------------------------------------------------------------------------
+
+Delete-Account.apxc
+
+public class Demo3 {
+    public void DeleteAccount() {
+        List<Account> oldAccounts = new List<Account>();
+        for(Account acc: [SELECT Name, Phone FROM Account WHERE Name='Devesh']) {
+            delete acc;
+        }
+        update oldAccounts;
+    }
+}
+
+------------------------------------------------------------------------------------
+
+Type the following in Debug Anonymous Window
+
+Demo3 acc = new Demo3();
+acc.DeleteAccount();
+
+--------------------------------------------------------------------------------------
