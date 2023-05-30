@@ -61,3 +61,7 @@ Demo3 acc = new Demo3();
 acc.DeleteAccount();
 
 --------------------------------------------------------------------------------------
+
+
+To see the Records
+Type select Name,Phone from Account in Query Editor Tab
