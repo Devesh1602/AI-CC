@@ -1,4 +1,9 @@
 #Time Complexity of BFS = O(V+E) where V is vertices and E is edges. 
+T.C and S.C -> O(b^d) branch and depth BFS
+
+T.C and S.C -> O(n^m) and O(bm)
+maximum depth, node, shallower depth(b) DFS
+
 #Time Complexity of DFS is also O(V+E) where V is vertices and E is edges.
 #Space Complexity for BFS is O(w) where w is the maximum width of the tree.
 #Space Complexity for DFS is O(h) where h is the maximum height of the tree.
